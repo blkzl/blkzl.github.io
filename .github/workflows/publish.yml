@@ -33,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Debug workspace
-        run: ls -R | grep -v "node_modules"
+        run: find . -type f | grep -v "/node_modules/"
 
       - name: Debug out directory
         run: ls -R ./out
