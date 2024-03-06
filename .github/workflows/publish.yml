@@ -36,12 +36,12 @@ jobs:
         run: find . -type f | grep -v "/node_modules/"
 
       - name: Debug out directory
-        run: ls -R ./out
+        run: ls -R ./dist
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./dist
 
   deploy:
     environment:
