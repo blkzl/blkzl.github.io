@@ -30,10 +30,10 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js 🏗️
-        run: npx next build
+        run: npm run build
 
       - name: Debug workspace
-        run: ls -R
+        run: ls -R | grep -v "node_modules"
 
       - name: Debug out directory
         run: ls -R ./out
