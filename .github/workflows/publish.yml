@@ -26,8 +26,6 @@ jobs:
 
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
-        with:
-          static_site_generator: next
 
       - name: Build with Next.js 🏗️
         run: npm run build
@@ -35,13 +33,10 @@ jobs:
       - name: Debug workspace
         run: find . -type f | grep -v "/node_modules/"
 
-      - name: Debug out directory
-        run: ls -R ./dist
-
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./out
 
   deploy:
     environment:
